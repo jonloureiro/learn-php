@@ -19,6 +19,7 @@
 
   <header class="header">
     <h1>Learning PHP</h1>
+    <span>&nbsp;Basic</span>
   </header>
 
   <main class="main">

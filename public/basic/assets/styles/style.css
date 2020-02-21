@@ -20,6 +20,11 @@ body {
   align-items: center;
 }
 
+.header > span {
+  margin-top: 12px;
+  align-self: flex-start;
+}
+
 .main {
   display: grid;
   grid-template-rows: 1fr;
