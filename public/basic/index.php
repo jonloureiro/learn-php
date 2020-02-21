@@ -28,9 +28,10 @@
         $ignore = [
           '.',
           '..',
-          'index.php',
+          '.DS_Store',
           'assets',
-          '.DS_Store'
+          'index.php',
+          'vendor',
         ];
         $files = array_diff(scandir(__DIR__), $ignore);
         foreach ($files as $file) {
