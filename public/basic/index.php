@@ -2,21 +2,25 @@
 <html lang="pt-BR">
 
 <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="assets/sanitize.css">
-  <link rel="stylesheet" href="assets/typography.css">
-  <link rel="stylesheet" href="assets/forms.css">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/styles/sanitize.css">
+  <link rel="stylesheet" href="assets/styles/typography.css">
+  <link rel="stylesheet" href="assets/styles/forms.css">
+  <link rel="stylesheet" href="assets/styles/style.css">
 
   <title>Learning PHP</title>
+
 </head>
 
 <body>
+
   <header class="header">
     <h1>Learning PHP</h1>
   </header>
+
   <main class="main">
     <nav class="sidebar">
       <ul class="sidebar__list">
@@ -49,9 +53,20 @@
       ?>
     </div>
   </main>
+
   <footer class="footer">
     <a href="https://github.com/jonloureiro" class="footer__text">github/jonloureiro</a>
   </footer>
+
+  <?php
+  require "./assets/scripts/HotReloader.php";
+
+  use HotReloader\HotReloader;
+
+  $reloader = new HotReloader();
+  $reloader->init();
+  ?>
+
 </body>
 
 </html>
