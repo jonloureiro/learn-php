@@ -59,7 +59,7 @@
   </footer>
 
   <?php
-  require "./assets/scripts/HotReloader.php";
+  require "./vendor/HotReloader.php";
 
   use HotReloader\HotReloader;
 
