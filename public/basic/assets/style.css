@@ -61,3 +61,18 @@ body {
   height: calc(100vh - 86px);
   padding: 16px;
 }
+
+.content__link-to-home {
+  text-decoration: none;
+  color: var(--main-txt-color);
+  padding-right: 8px;
+}
+
+.title {
+  margin: 0;
+  display: inline;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+}

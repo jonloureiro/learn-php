@@ -30,8 +30,9 @@
         ];
         $files = array_diff(scandir(__DIR__), $ignore);
         foreach ($files as $file) {
+          $text = strtoupper(substr($file, 2));
           echo "<li>
-          <a class=\"sidebar__link\" href=\"?p=${file}\">${file}</a>
+          <a class=\"sidebar__link\" href=\"?p=${file}\">${text}</a>
           </li>";
         }
         ?>
@@ -39,7 +40,12 @@
     </nav>
     <div class="content">
       <?php
-      include($_GET['p'] . "/index.php");
+      if (!$_GET['p']) {
+        echo '<h2 class="title">Ainda estou aprendendo ;B</h2>';
+      } else {
+        echo '<a class="content__link-to-home" href="\basic">←</a>';
+        include($_GET['p'] . "/index.php");
+      }
       ?>
     </div>
   </main>
