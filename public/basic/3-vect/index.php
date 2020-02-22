@@ -16,3 +16,31 @@ $inteiros = array_merge($impares, $pares);
 sort($inteiros);
 print_r($inteiros);
 echo "<br><br>";
+
+$usuario = [
+  "nome" => "Carlos",
+  "idade" => 25,
+  "cidade" => "Cuiabá",
+];
+
+print_r($usuario);
+unset($usuario["cidade"]);
+echo "<br>";
+print_r($usuario);
+
+$endereco = [
+  "CEP" => "78068-000",
+  "Rua" => "Rua 30",
+  "Bairro" => "Boa Esperança",
+];
+
+echo "<br>";
+print_r($endereco);
+$usuario["endereco"] = $endereco;
+echo "<br>";
+print_r($usuario);
+unset($usuario["endereco"]);
+
+$usuario = array_merge($usuario, $endereco);
+echo "<br>";
+print_r($usuario);
