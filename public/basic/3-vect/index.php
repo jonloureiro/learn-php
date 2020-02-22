@@ -44,3 +44,17 @@ unset($usuario["endereco"]);
 $usuario = array_merge($usuario, $endereco);
 echo "<br>";
 print_r($usuario);
+
+$arrayVazio = [
+  "só remover",
+];
+
+echo "<br>";
+unset($arrayVazio[0]);
+echo "<br>";
+print_r($arrayVazio);
+echo "<br>";
+echo is_array($arrayVazio);
+unset($arrayVazio);
+echo "<br>";
+var_dump($arrayVazio);
