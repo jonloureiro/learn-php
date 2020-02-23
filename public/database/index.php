@@ -34,6 +34,7 @@
   <?php
       require_once 'database.php';
       require_once 'create_table.php';
+      require_once 'insert.php';
 
       echo "<br><br>" . "Tudo certo!";
   ?>
