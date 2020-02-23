@@ -13,7 +13,7 @@ $connection->query($sql);
 $result = $connection->query($sql);
 
 if ($result) {
-    echo "Tabela user iniciado" . "<br>";
+    echo "Tabela user iniciada" . "<br>";
 } else {
     echo "Erro: " . $connection->error;
 }
