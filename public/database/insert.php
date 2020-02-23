@@ -10,7 +10,7 @@ $connection = newConnection();
 // $result = $connection->query($sql);
 
 // if ($result) {
-//     echo "Database iniciado" . "<br>";
+//     echo "Dados inseridos" . "<br>";
 // } else {
 //     echo "Erro: " . $connection->error;
 // }
