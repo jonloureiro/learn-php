@@ -6,9 +6,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="assets/styles/sanitize.css">
-  <link rel="stylesheet" href="assets/styles/typography.css">
-  <link rel="stylesheet" href="assets/styles/forms.css">
+  <link rel="stylesheet" href="../assets/styles/sanitize.css">
+  <link rel="stylesheet" href="../assets/styles/typography.css">
+  <link rel="stylesheet" href="../assets/styles/forms.css">
   <link rel="stylesheet" href="assets/styles/style.css">
 
   <title>Learning PHP</title>
@@ -36,8 +36,8 @@
         ];
         $files = array_diff(scandir(__DIR__), $ignore);
         foreach ($files as $file) {
-          $text = strtoupper(substr($file, 2));
-          echo "<li>
+            $text = strtoupper(substr($file, 2));
+            echo "<li>
           <a class=\"sidebar__link\" href=\"?p=${file}\">${text}</a>
           </li>";
         }
@@ -47,10 +47,10 @@
     <div class="content">
       <?php
       if (!$_GET['p']) {
-        echo '<h2 class="title">Ainda estou aprendendo ;B</h2>';
+          echo '<h2 class="title">Ainda estou aprendendo ;B</h2>';
       } else {
-        echo '<a class="content__link-to-home" href="\basic">←</a>';
-        include($_GET['p'] . "/index.php");
+          echo '<a class="content__link-to-home" href="\basic">←</a>';
+          include($_GET['p'] . "/index.php");
       }
       ?>
     </div>
