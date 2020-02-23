@@ -8,6 +8,8 @@
 <body>
     <?php
         require_once 'database.php';
+        require_once 'create_table.php';
+
         echo "<br><br>" . "Tudo certo!";
     ?>
 </body>
