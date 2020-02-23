@@ -1,6 +1,6 @@
 <?php
 
-function newConnection($database = 'teste')
+function newConnection($database = 'learning_php')
 {
     $server = "192.168.99.103:3306";
     $user = "root";
