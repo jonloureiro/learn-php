@@ -26,16 +26,16 @@ $offset = 0;
 $dbh = newConnection(null);
 $results['init'] = $dbh->exec($initSQL);
 
-if ($_POST && $_POST['type'] === 'add' && $task = trim($_POST['task'])) {
+if ($_POST && $_POST['type'] === 'POST' && $task = trim($_POST['task'])) {
     $sth = $dbh->prepare($insertSQL);
     $sth->bindParam(1, $task, PDO::PARAM_STR);
     $results['create'] = $sth->execute();
     unset($_POST['id']);
-} elseif ($_POST && $_POST['type'] === 'del' && is_int((int) $_POST['id'])) {
+} elseif ($_POST && $_POST['type'] === 'DELETE' && is_int((int) $_POST['id'])) {
     $sth = $dbh->prepare(($deleteSQL));
     $sth->bindParam(1, $_POST['id'], PDO::PARAM_INT);
     $results['delete'] = $sth->execute();
-} elseif ($_POST && $_POST['type'] === 'edit'
+} elseif ($_POST && $_POST['type'] === 'PUT'
           && is_int((int) $_POST['id']) && $task = trim($_POST['task'])) {
     $sth = $dbh->prepare($updateSQL);
     $sth->bindParam(1, $task, PDO::PARAM_STR);
@@ -67,7 +67,7 @@ $tasks = $sth->fetchAll(PDO::FETCH_ASSOC);
   <header>
     <form class="header__form" action="/crud/" method="post">
       <input type="hidden" name="type"
-        value=<?= ($_GET && $_GET['id'] && $_GET['task']) ? 'edit' : 'add'?>>
+        value=<?= ($_GET && $_GET['id'] && $_GET['task']) ? 'PUT' : 'POST'?>>
       <input type="hidden" name="id"
         value=<?= ($_GET && $_GET['id'] && $_GET['task']) ? $_GET['id'] : ''?>>
       <label for="task">Tarefa</label>
@@ -106,7 +106,7 @@ $tasks = $sth->fetchAll(PDO::FETCH_ASSOC);
                 <input class="table-item__edit" type="submit" value="O">
               </form>
               <form action="/crud/" method="post">
-                <input type="hidden" name="type" value="del">
+                <input type="hidden" name="type" value="DELETE">
                 <input type="hidden" name="id" value=<?= $task['id'] ?>>
                 <input class="table-item__del" type="submit" value="X">
               </form>
@@ -118,7 +118,7 @@ $tasks = $sth->fetchAll(PDO::FETCH_ASSOC);
     <?php endif; ?>
     <div style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center">
       <?php if ($_POST): ?>
-        <strong>POST</strong>
+        <strong>HTML FORM METHOD POST</strong>
         <ul>
           <?php foreach ($_POST as $key => $post): ?>
             <li>
@@ -129,7 +129,7 @@ $tasks = $sth->fetchAll(PDO::FETCH_ASSOC);
       <?php endif; ?>
 
       <?php if ($_GET): ?>
-        <strong style="margin-top: 1.125rem;">GET</strong>
+        <strong style="margin-top: 1.125rem;">HTML FORM METHOD GET</strong>
         <ul>
           <?php foreach ($_GET as $key => $get): ?>
             <li>
