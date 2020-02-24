@@ -10,8 +10,9 @@ body {
   grid-template-columns: 1fr;
   background-color: var(--main-bg-color);
   color: var(--main-txt-color);
-  font-size: 1.5rem;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 1.125rem;
 }
 
 header {
@@ -21,7 +22,6 @@ header {
   justify-content: center;
   align-items: center;
   padding: 0 .75rem;
-  font-size: 1rem;
 }
 
 .header__form {
@@ -36,13 +36,68 @@ header {
   margin: 0 .75rem;
 }
 
-.header__bottom {
+.header__button {
   background-color: #028090;
+  cursor: pointer;
+}
+
+.header__cancel-button {
+  border-left:none;
+  background-color: #be596a;
   cursor: pointer;
 }
 
 main {
   min-height: 100vh - 86px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  margin: 1rem;
+  width: calc(100vw - 1rem);
+}
+
+td {
+  padding: 1px .5rem;
+  border: 1px solid var(--main-txt-color);
+  color: var(--main-txt-color);
+}
+
+tr:hover > td {
+  background-color: #E0E0E0;
+}
+
+.table-item__action {
+  display: flex;
+  justify-content: space-around;
+}
+
+.table-item__edit,
+.table-item__del {
+  width: 3rem;
+  cursor: pointer;
+  color: var(--second-txt-color);
+  border-radius: .5rem;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: none;
+}
+
+.table-item__edit {
+  background-color: #75ac6b;
+}
+
+.table-item__del {
+  background-color: #be596a;
+}
+
+ul {
+  padding: 0 ;
+  margin: 0;
+  list-style-type: none;
 }
 
 footer {
