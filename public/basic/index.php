@@ -60,15 +60,6 @@
     <a href="https://github.com/jonloureiro" class="footer__text">github/jonloureiro</a>
   </footer>
 
-  <?php
-  require "./vendor/HotReloader.php";
-
-  use HotReloader\HotReloader;
-
-  $reloader = new HotReloader();
-  $reloader->init();
-  ?>
-
 </body>
 
 </html>
