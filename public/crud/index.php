@@ -5,11 +5,13 @@
     $result[] = $connection->exec("USE learning_php;");
     $result[] = $connection->exec("CREATE TABLE IF NOT EXISTS task (
       id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-      texto VARCHAR(255) NOT NULL,
+      text VARCHAR(255) NOT NULL,
       created_at TIMESTAMP NOT NULL,
       edited_at TIMESTAMP
     );");
-    print_r($result)
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -21,28 +23,23 @@
   <link rel="stylesheet" href="../assets/styles/sanitize.css">
   <link rel="stylesheet" href="../assets/styles/typography.css">
   <link rel="stylesheet" href="../assets/styles/forms.css">
-
-  <style>
-    :root {
-      --main-txt-color: #353535;
-      --main-bg-color: #F1F2EA;
-    }
-    
-    html {
-      font-size: 200%;
-    }
-
-    body {
-      padding: 1rem;
-      background-color: var(--main-bg-color);
-      color: var(--main-txt-color);
-    }
-  </style>
+  <link rel="stylesheet" href="assets/styles/style.css">
 
   <title>CRUD</title>
 </head>
 <body>
-
-  
+  <header>
+    <form class="header__form" action="#" method="post">
+      <label for="text">Tarefa</label>
+      <input class="header__input" type="text" name="text">
+      <input class="header__bottom" type="submit" value="Add">
+    </form>
+  </header>
+  <main>
+  <h2>main</h2>
+  </main>
+  <footer>
+    <a href="https://github.com/jonloureiro" class="footer__text">github/jonloureiro</a>
+  </footer>
 </body>
 </html>
