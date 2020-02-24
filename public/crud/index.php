@@ -96,7 +96,12 @@ $tasks = $sth->fetchAll(PDO::FETCH_ASSOC);
             <?= $task['text']; ?>
           </td>
           <td>
-            <?= $task['edited_at'] ? $task['edited_at'] : $task['created_at']; ?>
+            <?=
+                date(
+                    'H:i -  j, M \d\e o',
+                    strtotime($task['edited_at'] ?? $task['created_at'])
+                );
+            ?>
           </td>
           <td style="width: 9rem;">
             <div class="table-item__action">
