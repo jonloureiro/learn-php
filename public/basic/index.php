@@ -18,7 +18,7 @@
 <body>
 
   <header class="header">
-    <h1>Learning PHP</h1>
+    <a href="../"><h1>Learning PHP</h1></a>
     <span>&nbsp;Basic</span>
   </header>
 
